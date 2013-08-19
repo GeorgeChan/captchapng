@@ -1,4 +1,4 @@
-#Captcha PNG generator
+﻿#Captcha PNG generator
 
 一款 node.js 校验码生成器。
 

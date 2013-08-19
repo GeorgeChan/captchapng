@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "captchapng",
   "version": "0.0.1",
   "description": "Captcha PNG",
@@ -8,7 +8,7 @@
   "main": "./lib/captchapng.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/GeorgeChan/captchapng"
   },
   "keywords": [
     "captchapng"
