@@ -1,16 +1,3 @@
-#Captcha PNG generator
-
-一款 node.js 校验码生成器。
-
-A captcha generator for node.js.
-
-##Features
-* 内置2种字体
-* 字符会在上下、左右范围内的随机位移
-* 纯 javascript
-
-##Examples
-```javascript
 /**
  * Captcha PNG img generator
  * @Author: George Chan
@@ -39,5 +26,3 @@ http.createServer(function (request, response) {
 }).listen(8181);
 
 console.log('Web server started.\n http:\\\\127.0.0.1:8181\\captcha.png');
-
-```
