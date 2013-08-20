@@ -12,9 +12,9 @@ var captchapng = require('captchapng');
 
 http.createServer(function (request, response) {
     if(request.url == '/captcha.png') {
-        var p = new captchapng(80,30,parseInt(Math.random()*9000+1000));
-        var background = p.color(0, 0, 0, 0);
-        var paint = p.color((0x00, 0x00, 0xcc));
+        var p = new captchapng(80,30,parseInt(Math.random()*9000+1000)); // width,height,numeric captcha
+        p.color(0, 0, 0, 0);  // First color: background (red, green, blue, alpha)
+        p.color(80, 80, 80, 255); // Second color: paint (red, green, blue, alpha)
 
         var img = p.getBase64();
         var imgbase64 = new Buffer(img,'base64');

@@ -1,7 +1,7 @@
 ﻿{
   "name": "captchapng",
   "version": "0.0.1",
-  "description": "Captcha PNG",
+  "description": "A numeric captcha generator for Node.js",
   "author": {
     "name": "George Chan"
   },
@@ -17,6 +17,6 @@
     "pnglib":""
   },
   "license": "BSD",
-    "readme": "#Captcha PNG generator\n\nA captcha generator for node.js.\n\n一款 node.js 校验码生成器。\n\n##Features\n* 内置2种字体\n* 字符会在上下、左右范围内的随机位移\n* 纯 javascript\n\n##Examples\n```javascript\n/**\n * Captcha PNG img generator\n * @Author: George Chan\n * @Version: 1.0\n * @Date: 2013-08-18\n * @license http://www.opensource.org/licenses/bsd-license.php BSD License\n */\n\nvar http = require('http');\nvar captchapng = require('captchapng');\n\nhttp.createServer(function (request, response) {\n    if(request.url == '/captcha.png') {\n        var p = new captchapng(80,30,parseInt(Math.random()*9000+1000));\n        var background = p.color(0, 0, 0, 0);\n        var paint = p.color((0x00, 0x00, 0xcc));\n\n        var img = p.getBase64();\n        var imgbase64 = new Buffer(img,'base64');\n        response.writeHead(200, {\n            'Content-Type': 'image/png'\n        });\n        response.end(imgbase64);\n    } else response.end('');\n}).listen(8181);\n\nconsole.log('Web server started.\\n http:\\\\127.0.0.1:8181\\captcha.png');\n\n```",
+    "readme": "#Captcha PNG generator\nA numeric captcha generator for Node.js\n\n##Features\n* Only generate numeric captcha PNG image\n* Build-in fonts\n* Characters up and down, left and right limits, random displacement\n* Full JavaScript\n\n##Examples\n```javascript\n/**\n * Captcha PNG img generator\n * @Author: George Chan\n * @Email: gchan@21cn.com\n * @Version: 1.0\n * @Date: 2013-08-18\n * @license http://www.opensource.org/licenses/bsd-license.php BSD License\n */\n\nvar http = require('http');\nvar captchapng = require('captchapng');\n\nhttp.createServer(function (request, response) {\n    if(request.url == '/captcha.png') {\n        var p = new captchapng(80,30,parseInt(Math.random()*9000+1000)); // width,height,numeric captcha\n        p.color(0, 0, 0, 0);  // First color: background (red, green, blue, alpha)\n        p.color(80, 80, 80, 255); // Second color: paint (red, green, blue, alpha)\n\n        var img = p.getBase64();\n        var imgbase64 = new Buffer(img,'base64');\n        response.writeHead(200, {\n            'Content-Type': 'image/png'\n        });\n        response.end(imgbase64);\n    } else response.end('');\n}).listen(8181);\n\nconsole.log('Web server started.\\n http:\\\\127.0.0.1:8181\\captcha.png');\n```",
   "readmeFilename": "README.md"
 }
