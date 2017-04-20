@@ -1,13 +1,13 @@
 ﻿#Captcha PNG generator
 A numeric captcha generator for Node.js
 
-##Features
+## Features
 * Only generate numeric captcha PNG image
 * Build-in fonts
 * Characters up and down, left and right limits, random displacement
 * Full JavaScript
 
-##Examples
+## Examples
 ```javascript
 /**
  * Captcha PNG img generator
@@ -37,4 +37,4 @@ http.createServer(function (request, response) {
 }).listen(8181);
 
 console.log('Web server started.\n http:\\\\127.0.0.1:8181\\captcha.png');
-```
+``
