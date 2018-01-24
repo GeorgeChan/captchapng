@@ -1,4 +1,4 @@
-﻿#Captcha PNG generator
+# Captcha PNG generator
 A numeric captcha generator for Node.js
 
 ## Features
