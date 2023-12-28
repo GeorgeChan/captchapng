@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "captchapng",
   "version": "0.0.1",
   "description": "A numeric captcha generator for Node.js",
